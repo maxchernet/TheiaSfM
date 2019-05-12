@@ -20,6 +20,8 @@ set(vl_sources
   vl/vlad.c)
 set_source_files_properties(${vl_sources} PROPERTIES LANGUAGE C)
 
+add_definitions(-DVL_DISABLE_SSE2)
+
 if (MSVC)
   add_definitions(-DVL_BUILD_DLL)
   add_definitions(-DVL_DISABLE_SSE2)
