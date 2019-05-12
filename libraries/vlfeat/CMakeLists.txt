@@ -1,5 +1,5 @@
 project(vlfeat)
-
+add_definitions(-DVL_DISABLE_SSE2)
 include("${CMAKE_MODULE_PATH}/OptimizeTheiaCompilerFlags.cmake")
 optimizetheiacompilerflags()
 
@@ -26,6 +26,7 @@ if (MSVC)
   add_definitions(-DVL_BUILD_DLL)
   add_definitions(-DVL_DISABLE_SSE2)
 endif (MSVC)
+add_definitions(-DVL_DISABLE_SSE2)
 
 add_library(vlfeat SHARED ${vl_sources})
 install(TARGETS vlfeat
